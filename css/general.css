@@ -1,4 +1,20 @@
-*, *:after, *:before {margin: 0;padding: 0;}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::selection {
+	background-color: #8ba9d8;
+    color: white;
+}
 
 html {
     background-color: white;
@@ -6,25 +22,38 @@ html {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
     font-family: "calluna",serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 300;  
+    width: 100%;
+    height: 100%;
+}
+
+.container {
     background-color: white;
     color: #444444;
     display: block;
     width: 90%;
-    max-width: 40rem;
     padding: 7% 15%;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    margin: 2rem auto;
+}
+
+@media only screen and (min-width: 67.1875em) {
+    .container {
+        max-width: 70rem;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
 }
 
 .sofia {
@@ -35,6 +64,12 @@ body {
 
 h1 {
     font-weight: 300;
+}
+
+@media only screen and (max-width: 67.1875em) {
+    h1 {
+        font-size: 1.5rem;
+    }
 }
 
 p {
